@@ -1,0 +1,52 @@
+@mixin flex($alignItems: initial, $justifyContent: initial, $wrap: initial, $flow: initial) {
+	display: flex;
+	align-items: $alignItems;
+	justify-content: $justifyContent;
+	flex-wrap: $wrap;
+	flex-direction: $flow;
+}
+
+@mixin flexContainer($maxWidth: 1346px, $padding: 0 8px, $margin: 0 auto, $alignItems: initial, $justifyContent: initial, $wrap: initial, $flow: initial, $width: 100%) {
+	@include container($maxWidth, $padding, $width, $margin);
+	@include flex($alignItems, $justifyContent, $wrap, $flow);
+}
+
+@mixin flexListHorizontal($margin: 16px) {
+	> * {
+		&:not(:first-child) {
+			margin-left: $margin;
+		}
+	}
+}
+
+@mixin flexListVertical($margin: 16px) {
+	> * {
+		&:not(:first-child) {
+			margin-top: $margin;
+		}
+	}
+}
+
+@mixin flexGap2($marginLeft: 12px, $marginBottom: 24px) {
+	flex-wrap: wrap;
+	> * {
+		width: calc(50% - #{$marginLeft / 2});
+		margin-bottom: $marginBottom;
+		&:nth-child(2n) {
+			margin-left: $marginLeft;
+		}
+		&:last-child, &:nth-last-child(2) {
+			margin-bottom: 0;
+		}
+	}
+}
+
+@mixin flexGap1($marginBottom: 24px) {
+	display: block;
+	> * {
+		margin-bottom: $marginBottom;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

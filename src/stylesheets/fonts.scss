@@ -1,0 +1,145 @@
+$baseFonts: Helvetica, Segoe UI, sans-serif;
+
+$fontFamilyRoboto: Roboto, $baseFonts;
+$fontFamilyRaleway: Raleway, $baseFonts;
+
+@mixin kiraFont($fontName)
+{
+  font-family: var(--kr-font-#{$fontName}-font-family);
+  font-style: var(--kr-font-#{$fontName}-font-style);
+  font-weight: var(--kr-font-#{$fontName}-font-weight);
+  font-size: var(--kr-font-#{$fontName}-font-size);
+  line-height: var(--kr-font-#{$fontName}-line-height);
+  letter-spacing: var(--kr-font-#{$fontName}-letter-spacing);
+  -webkit-font-feature-settings: 'pnum' on, 'lnum' on;
+      -moz-font-feature-settings: 'pnum' on, 'lnum' on;
+      -ms-font-feature-settings: 'pnum' on, 'lnum' on;
+        -o-font-feature-settings: 'pnum' on, 'lnum' on;
+          font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+@mixin declareKiraFont($fontName, $fontFamily, $fontStyle, $fontWeight, $fontSize, $fontLineHeight, $fontLetterSpacing: inherit)
+{
+  :root {
+    --kr-font-#{$fontName}-font-family: #{$fontFamily};
+    --kr-font-#{$fontName}-font-style: #{$fontStyle};
+    --kr-font-#{$fontName}-font-weight: #{$fontWeight};
+    --kr-font-#{$fontName}-font-size: #{$fontSize};
+    --kr-font-#{$fontName}-line-height: #{$fontLineHeight};
+    --kr-font-#{$fontName}-letter-spacing: #{$fontLetterSpacing};
+  }
+
+  .kr-font-#{$fontName}
+  {
+    @include kiraFont($fontName);
+  }
+}
+
+@include declareKiraFont(
+                navigation,
+                $fontFamilyRaleway, normal, 500, 14px, 20px, inherit
+);
+
+@include declareKiraFont(
+                caption,
+                $fontFamilyRoboto, normal, normal, 13px, 16px, inherit
+);
+
+@include declareKiraFont(
+                m-caption,
+                $fontFamilyRoboto, normal, normal, 12px, 16px, 0.02em
+);
+
+@include declareKiraFont(
+                button,
+                $fontFamilyRaleway, normal, 600, 20px, 28px, 0.01em
+);
+
+@include declareKiraFont(
+                m-button,
+                $fontFamilyRaleway, normal, 600, 20px, 28px, 0.01em
+);
+
+@include declareKiraFont(
+                s-button,
+                $fontFamilyRaleway, normal, 600, 16px, 24px, 0.01em
+);
+
+@include declareKiraFont(
+                body-1,
+                $fontFamilyRoboto, normal, normal, 18px, 32px, inherit
+);
+
+@include declareKiraFont(
+                m-body-1,
+                $fontFamilyRoboto, normal, normal, 18px, 32px, inherit
+);
+
+@include declareKiraFont(
+                s-body-1,
+                $fontFamilyRoboto, normal, normal, 16px, 24px, inherit
+);
+
+@include declareKiraFont(
+                body-2,
+                $fontFamilyRoboto, normal, normal, 16px, 24px, inherit
+);
+
+@include declareKiraFont(
+                m-body-2,
+                $fontFamilyRoboto, normal, normal, 16px, 24px, inherit
+);
+
+@include declareKiraFont(
+                s-body-2,
+                $fontFamilyRoboto, normal, normal, 14px, 20px, inherit
+);
+
+@include declareKiraFont(
+                h1,
+                $fontFamilyRaleway, normal, bold, 48px, 56px, inherit
+);
+
+@include declareKiraFont(
+                m-h1,
+                $fontFamilyRaleway, normal, bold, 48px, 56px, inherit
+);
+
+@include declareKiraFont(
+                s-h1,
+                $fontFamilyRaleway, normal, bold, 32px, 40px, inherit
+);
+
+@include declareKiraFont(
+                h2,
+                $fontFamilyRaleway, normal, 600, 40px, 48px, 0.01em
+);
+
+@include declareKiraFont(
+                m-h2,
+                $fontFamilyRaleway, normal, 600, 40px, 48px, 0.01em
+);
+
+@include declareKiraFont(
+                s-h2,
+                $fontFamilyRaleway, normal, 600, 28px, 40px, 0.01em
+);
+
+@include declareKiraFont(
+                h3,
+                $fontFamilyRaleway, normal, 600, 18px, 32px, inherit
+);
+@include declareKiraFont(
+                m-h3,
+                $fontFamilyRaleway, normal, 600, 18px, 32px, inherit
+);
+
+@include declareKiraFont(
+                h4,
+                $fontFamilyRaleway, normal, bold, 18px, 20px, inherit
+);
+
+@include declareKiraFont(
+                s-h4,
+                $fontFamilyRaleway, normal, 600, 14px, 20px, inherit
+);

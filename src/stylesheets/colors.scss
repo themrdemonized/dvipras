@@ -1,0 +1,57 @@
+:root {
+  --kr-color-main-plain-text: #2D2D2D;
+
+  --kr-color-main-light-divider: #E1E1E8;
+  --kr-color-main-light-fill: #F3F3F6;
+
+  --kr-color-main-divider: #D4D4D9;
+
+  --kr-color-indicator-active: rgba(10, 112, 246, 0.12);
+  --kr-color-indicator-error: rgba(210, 0, 4, 0.16);
+
+  --kr-color-main-field-border: #9D9DA1;
+
+  --kr-color-feedback-error-1: #FFE3E4;
+  --kr-color-feedback-error-2: #D20004;
+  --kr-color-feedback-error-3: #F42F50;
+
+  --kr-color-feedback-active: #0080FF;
+  --kr-color-feedback-active-1: #0093FF;
+  --kr-color-feedback-active-2: #0A70F6;
+  --kr-color-feedback-active-3: #0050C8;
+
+  --kr-color-feedback-inactive: #75767A;
+
+  --kr-color-main-help-text: #6B6B6E;
+  --kr-color-main-white: #FFFFFF;
+
+  --kr-color-main-header: #212121;
+  --kr-color-secondary-texture: #2C3038;
+
+  --kr-color-layout-black-metallic: #333741;
+
+  --kr-color-primary: #0F3580;
+  --kr-color-secondary: #F16D4C;
+  --kr-color-light: rgba(47, 48, 64, 0.6);
+  --kr-color-light-2: rgba(47, 48, 64, 0.6);
+  --kr-color-light-3: rgba(47, 48, 64, 0.3);
+  --kr-color-light-bg-3: rgba(242, 243, 246, 1);
+  --kr-color-light-divider: rgba(225, 225, 229, 1);
+
+}
+
+@function kiraColor($color) {
+  @return var(--kr-color-#{$color});
+}
+
+@function getColor($color) {
+  @return kiraColor($color);
+}
+
+@mixin color($color) {
+  color: var(--kr-color-#{$color});
+}
+
+@mixin kiraColor($color) {
+  @include color($color);
+}
